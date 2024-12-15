@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;    
+}
+
+body{
+    background: #DFE9F5;  
+}
+
+.wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);    
+}
+
+.buquet{
+    position: absolute;
+    left: -150px;
+    top: -400px;
+    width: 1050px;          
+}
+
+.mail{
+    width: 500px;
+    height: 300px;
+    background: #f0e5cd;
+    border-radius: 15px;
+    position: relative;
+    transform-style: preserve-3d;    
+    transform: rotate3d(0,0,1, -5deg);
+    cursor: pointer;    
+}
+
+.LPR{
+    position: absolute;
+    top: 190px;
+    left: 190px;
+    width: 300px;    
+    z-index: 1;
+    transform: rotate3d(0,0,1,-5deg);
+}
+
+.mail::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-left: 250px solid transparent;
+    border-right: 250px solid #e9d8b4;
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid #e9d8b4;
+    border-radius: 15px;
+    z-index: 5;    
+}
+
+.mail::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-left: 250px solid #eddfc1;
+    border-right:250px solid transparent;
+    border-top: 150px solid transparent;
+    border-bottom: 150px solid #eddfc1;
+    border-radius: 15px;
+    z-index: 4;
+}
+
+.cover::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-top: 150px solid #f0e5cd;
+    border-bottom: 150px solid transparent;
+    z-index: 6;
+    transform-origin: top;
+    transform: rotateX(0px);
+    transition: all 1s 1s ease;
+}
+
+.letter{
+    position: absolute;
+    z-index: 3;
+    top: 0px;
+    left: 10px;    
+    background: #fffafa;
+    width: 480px;
+    height: 280px;
+    border-radius: 20px;
+    transition: all 1s ease;
+}
+
+.letter  img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 480px;    
+    transform: translate(-50%, -50%);
+}
+
+.mail:hover .cover::before{    
+    transform: rotateX(180deg);
+    transition: all 1s ease;
+    z-index: -1;    
+}
+
+.mail:hover .letter{    
+    top: -200px;
+    transition: all 1s 1s ease;
+}
+
